@@ -95,6 +95,42 @@ class SudokuHandlerTest extends TestCase
                 ],
                 false,
             ],
+            'invalid square size - 4 x 6' => [
+                [
+                    SudokuConstants::SUDOKU_DATA_KEY => '1,2,3,4' . PHP_EOL . '3,4,2,1' . PHP_EOL . '4,3,1,2' . PHP_EOL . '2,1,4,3' . PHP_EOL . '2,1,4,3' . PHP_EOL . '2,1,4,3',
+                ],
+                false,
+            ],
+            'valid square size -  9 x 9' => [
+                [
+                    SudokuConstants::SUDOKU_DATA_KEY =>
+                        '7,1,9,5,4,8,2,6,3' . PHP_EOL .
+                        '5,2,6,1,3,7,9,8,4' . PHP_EOL .
+                        '3,4,8,6,2,9,5,7,1' . PHP_EOL .
+                        '6,3,2,9,5,4,7,1,8' . PHP_EOL .
+                        '8,9,1,7,6,2,4,3,5' . PHP_EOL .
+                        '4,5,7,3,8,1,6,9,2' . PHP_EOL .
+                        '9,8,5,4,1,6,3,2,7' . PHP_EOL .
+                        '2,7,4,8,9,3,1,5,6' . PHP_EOL .
+                        '1,6,3,2,7,5,8,4,9' . PHP_EOL
+                ],
+                true,
+            ],
+            'invalid 9 x 9 square size -  wrong last element' => [
+                [
+                    SudokuConstants::SUDOKU_DATA_KEY =>
+                        '7,1,9,5,4,8,2,6,3' . PHP_EOL .
+                        '5,2,6,1,3,7,9,8,4' . PHP_EOL .
+                        '3,4,8,6,2,9,5,7,1' . PHP_EOL .
+                        '6,3,2,9,5,4,7,1,8' . PHP_EOL .
+                        '8,9,1,7,6,2,4,3,5' . PHP_EOL .
+                        '4,5,7,3,8,1,6,9,2' . PHP_EOL .
+                        '9,8,5,4,1,6,3,2,7' . PHP_EOL .
+                        '2,7,4,8,9,3,1,5,6' . PHP_EOL .
+                        '1,6,3,2,7,5,8,4,8' . PHP_EOL
+                ],
+                false,
+            ],
         ];
     }
 }

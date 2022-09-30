@@ -36,7 +36,7 @@ class SudokuForm extends AbstractType
     protected function addSubmitButton(FormBuilderInterface $builder)
     {
         $builder->add('submit', SubmitType::class, [
-            'label' => 'sudoku_form',
+            'label' => 'Check',
             'attr' => [
                 'class' => 'btn btn-primary safe-submit',
                 'data-e2e' => 'import-form-button',
