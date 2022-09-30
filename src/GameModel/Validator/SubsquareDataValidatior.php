@@ -15,9 +15,9 @@ class SubsquareDataValidatior implements DataValidatorInterface
     {
         $subsquareSize = sqrt($validationRequestDTO->getSquareSize());
 
-        for ($i = 0; $i < $validationRequestDTO->getSquareSize(); $i += $subsquareSize) {
-            for ($j = 0; $j < $validationRequestDTO->getSquareSize(); $j += $subsquareSize ) {
-                if (!$this->isDataInSubsquareValid($validationRequestDTO, $i, $j)) {
+        for ($startIndexAxisX = 0; $startIndexAxisX < $validationRequestDTO->getSquareSize(); $startIndexAxisX += $subsquareSize) {
+            for ($startIndexAxisY = 0; $startIndexAxisY < $validationRequestDTO->getSquareSize(); $startIndexAxisY += $subsquareSize ) {
+                if (!$this->isDataInSubsquareValid($validationRequestDTO, $startIndexAxisX, $startIndexAxisY)) {
                     return false;
                 }
             }
@@ -42,13 +42,13 @@ class SubsquareDataValidatior implements DataValidatorInterface
         $matrix = $validationRequestDTO->getData();
         $sumOfItems = $validationRequestDTO->getItemsSumInGroup();
 
-        for ($i = $startIndexAxisX; $i < $startIndexAxisX + $subsquareSize; $i++) {
-            for ($j = $startIndexAxisY; $j < $startIndexAxisY + $subsquareSize; $j++) {
-                if (!is_int($matrix[$i][$j]) || $matrix[$i][$j] > $validationRequestDTO->getSquareSize()) {
+        for ($axisXCoordinate = $startIndexAxisX; $axisXCoordinate < $startIndexAxisX + $subsquareSize; $axisXCoordinate++) {
+            for ($axisYCoordinate = $startIndexAxisY; $axisYCoordinate < $startIndexAxisY + $subsquareSize; $axisYCoordinate++) {
+                if (!is_int($matrix[$axisXCoordinate][$axisYCoordinate]) || $matrix[$axisXCoordinate][$axisYCoordinate] > $validationRequestDTO->getSquareSize()) {
                     return false;
                 }
 
-                $sumOfItems -= $matrix[$i][$j];
+                $sumOfItems -= $matrix[$axisXCoordinate][$axisYCoordinate];
             }
         }
 

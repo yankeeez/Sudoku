@@ -13,13 +13,13 @@ class VerticalDataValidator implements DataValidatorInterface
      */
     public function isDataValid(ValidationRequestDTO $validationRequestDTO): bool
     {
-        for ($i = 0; $i < $validationRequestDTO->getSquareSize(); $i++) {
+        for ($columnIndex = 0; $columnIndex < $validationRequestDTO->getSquareSize(); $columnIndex++) {
             if (
                 !$this->isDataInVerticalLineValid(
                     $validationRequestDTO->getData(),
                     $validationRequestDTO->getItemsSumInGroup(),
                     $validationRequestDTO->getSquareSize(),
-                    $i
+                    $columnIndex
                 )
             ) {
                 return false;
