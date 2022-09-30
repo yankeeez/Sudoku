@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shared;
+
 class SudokuConstants
 {
     public const SUDOKU_DATA_KEY = 'sudokuData';

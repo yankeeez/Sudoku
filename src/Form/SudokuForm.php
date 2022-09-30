@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use SudokuConstants;
+use App\Shared\SudokuConstants;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;

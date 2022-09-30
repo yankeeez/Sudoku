@@ -4,7 +4,7 @@ namespace App\Tests\GameModel;
 
 use App\SudokuBusinessFactory;
 use PHPUnit\Framework\TestCase;
-use SudokuConstants;
+use App\Shared\SudokuConstants;
 
 class SudokuHandlerTest extends TestCase
 {

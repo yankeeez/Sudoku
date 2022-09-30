@@ -5,7 +5,7 @@ namespace App\GameModel;
 use App\Dto\ResultResponseDTO;
 use App\Dto\ValidationRequestDTO;
 use App\GameModel\Validator\SudokuValidatorInterface;
-use SudokuConstants;
+use App\Shared\SudokuConstants;
 
 class SudokuHandler implements SudokuHandlerInterface
 {

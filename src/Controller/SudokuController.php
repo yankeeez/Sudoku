@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Form\SudokuForm;
 use App\SudokuBusinessFactory;
-use SudokuConstants;
+use App\Shared\SudokuConstants;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
