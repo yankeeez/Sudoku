@@ -12,6 +12,8 @@ Paste your variant in csv format, like:
 Pull the project and run:
 ```
 docker-compose up -d --build
+docker-compose exec php /bin/bash
+composer install
 ```
 
 To play the game go to: http://localhost:8080/sudoku.
