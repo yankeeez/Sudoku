@@ -4,12 +4,12 @@ services:
   php:
     container_name: php
     build:
-      context: ./php
+      context: ./
+      dockerfile: ./php/Dockerfile
     ports:
       - '9000:9000'
     volumes:
       - .:/var/www/symfony_docker
-    command: sh -c "composer install"
 
   nginx:
     container_name: nginx
