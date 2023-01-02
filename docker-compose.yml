@@ -9,6 +9,7 @@ services:
       - '9000:9000'
     volumes:
       - .:/var/www/symfony_docker
+    command: sh -c "composer install"
 
   nginx:
     container_name: nginx
